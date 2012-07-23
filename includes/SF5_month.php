@@ -8,7 +8,7 @@ class SF5month extends SFFormInput {
 		return 'html5-month';
     }
 	public function getHtmlText() {
-		$html = SF5Utils::textHTML( $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber, 'month' );	
+		$html = SF5Utils::textHTML('month', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber);	
 		return $html;
     }
 	

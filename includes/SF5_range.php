@@ -8,7 +8,7 @@ class SF5range extends SFFormInput {
 		return 'html5-range';
     }
 	public function getHtmlText() {
-		$html = SF5Utils::textHTML( $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber, 'range' );	
+		$html = SF5Utils::textHTML('range', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber );	
 		return $html;
     }
 	

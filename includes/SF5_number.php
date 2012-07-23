@@ -14,7 +14,7 @@ class SF5number extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
-		$html = SF5Utils::textHTML( $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber, 'number' );	
+		$html = SF5Utils::textHTML('number', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber );	
 		return $html;
 	}
 	

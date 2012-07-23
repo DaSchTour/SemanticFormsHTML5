@@ -1,7 +1,7 @@
 <?php
 
 class SF5Utils {
-	static function textHTML ( $currentValue, $inputName, $isDisabled, $otherArgs, $inputId = null, $tabIndex = null, $class = '', $html5type ) {
+	static function textHTML ( $html5type, $currentValue, $inputName, $isDisabled, $otherArgs, $inputId = null, $tabIndex = null, $class = '' ) {
 		global $sfgTabIndex;
  
                  // array of attributes to pass to the input field

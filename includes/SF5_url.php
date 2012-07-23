@@ -14,7 +14,7 @@ class SF5url extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
-		$html = SF5Utils::textHTML( $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber, 'url' );	
+		$html = SF5Utils::textHTML('url', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber);	
 		return $html;
 	}
 	
