@@ -5,7 +5,7 @@
 class SF5email extends SFFormInput {
 
 	public static function getName() {
-		return 'html5-email';
+		return 'html5email';
     }
 	
 	public static function getParameters() {
