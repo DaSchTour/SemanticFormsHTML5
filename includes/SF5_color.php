@@ -14,6 +14,7 @@ class SF5color extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
+		$inputFieldDisabled = SF5Utils::checkDisabled();
 		$html = SF5Utils::textHTML('color', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber);	
 		return $html;
 	}

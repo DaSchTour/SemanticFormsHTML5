@@ -15,4 +15,12 @@ class SF5Utils {
 		
 		 return $html;
 	}
+	
+	static function checkDisabled () {
+		$inputFieldDisabled =
+                          array_key_exists( 'disable input field', $this->mOtherArgs )
+                          || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
+                          || $this->mIsDisabled   ;
+		return $inputFieldDisabled;
+	}
 }

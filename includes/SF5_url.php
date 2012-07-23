@@ -14,6 +14,7 @@ class SF5url extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
+		$inputFieldDisabled = SF5Utils::checkDisabled();
 		$html = SF5Utils::textHTML('url', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber);	
 		return $html;
 	}

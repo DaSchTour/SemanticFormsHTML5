@@ -7,8 +7,9 @@ class SF5date extends SFFormInput {
 	public static function getName() {
 		return 'html5-date';
     }
-	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
-		$html = '<span style="color:red">Not implemented yet!</span>';
+	public function getHtmlText() {
+		$inputFieldDisabled = SF5Utils::checkDisabled();
+		$html = SF5Utils::textHTML('date', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber );	
 		return $html;
     }
 	
