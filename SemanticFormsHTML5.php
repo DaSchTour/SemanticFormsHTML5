@@ -20,7 +20,6 @@ $HTML5inputs = array('button','checkbox','color','date','datetime','datetime-loc
 
 $HTML5inputs = array('color');
 
-
 $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18n.php';
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
 
@@ -29,7 +28,7 @@ foreach ($HTML5inputs as $key => $value) {
 }
 
 function wfSF5Setup() {
-        global $sfgFormPrinter, $wgVersion;
+        global $sfgFormPrinter, $wgVersion, $HTML5inputs;
  		foreach ($HTML5inputs as $key => $value) {
 			$sfgFormPrinter->registerInputType('SF5{$value}');
 		}
