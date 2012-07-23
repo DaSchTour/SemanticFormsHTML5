@@ -8,6 +8,7 @@ class SF5week extends SFFormInput {
 		return 'html5-week';
     }
 	public function getHtmlText() {
+		$inputFieldDisabled = SF5Utils::checkDisabled();
 		$html = SF5Utils::textHTML('week', $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber);	
 		return $html;
     }

@@ -11,6 +11,19 @@ class SF5Utils {
                                  'value' => $currentValue,
                                  'type'  => $html5type
                  );
+				 
+		if ( array_key_exists( 'max', $otherArgs ) ) {
+                         $attribs['max'] = $otherArgs['max'];
+        }
+		
+		if ( array_key_exists( 'min', $otherArgs ) ) {
+                         $attribs['min'] = $otherArgs['min'];
+        }
+		
+		if ( array_key_exists( 'step', $otherArgs ) ) {
+                         $attribs['step'] = $otherArgs['step'];
+        }
+	
 		$html = Xml::element( 'input', $attribs );
 		
 		 return $html;
