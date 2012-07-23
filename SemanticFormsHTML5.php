@@ -24,13 +24,13 @@ $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
 
 foreach ($HTML5inputs as $key => $value) {
-	$wgAutoloadClasses['SF5{$value}'] = $dir . 'includes/SF5_{$value}.php';
+	$wgAutoloadClasses['SF5'.$value] = $dir . 'includes/SF5'.$value.'.php';
 }
 
 function wfSF5Setup() {
         global $sfgFormPrinter, $wgVersion, $HTML5inputs;
  		foreach ($HTML5inputs as $key => $value) {
-			$sfgFormPrinter->registerInputType('SF5{$value}');
+			$sfgFormPrinter->registerInputType('SF5'.$value);
 		}
 		return true;
 }
