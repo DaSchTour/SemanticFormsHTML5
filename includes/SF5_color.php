@@ -25,8 +25,8 @@ class SF5color extends SFFormInput {
                                  'value' => $currentValue,
                                  'type'  => 'color'
                   );
-		$html = Xml::element( 'input', $attribs );		
-		return $html;	
+		$html = '<input type="color" name="' . $inputName . '"/>';		
+		return $html;
 	}
 	
 	public static function getOtherPropTypesHandled() {
