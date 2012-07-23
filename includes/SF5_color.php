@@ -5,7 +5,7 @@
 class SF5color extends SFFormInput {
 
 	public static function getName() {
-		return 'html5color';
+		return 'html5-color';
     }
 	
 	public static function getParameters() {

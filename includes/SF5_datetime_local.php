@@ -1,11 +1,11 @@
 <?php
 
-/* HTML5 date */
+/* HTML5 datetime-local */
 
-class SF5date extends SFFormInput {
+class SF5datetime_local extends SFFormInput {
 
 	public static function getName() {
-		return 'html5-date';
+		return 'html5-datetime-local';
     }
 	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
 		$html = '<span style="color:red">Not implemented yet!</span>';
@@ -16,4 +16,3 @@ class SF5date extends SFFormInput {
 		return array('_str');
 	}
 }
-  
