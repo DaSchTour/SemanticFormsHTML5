@@ -24,7 +24,7 @@ $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
 
 foreach ($HTML5inputs as $key => $value) {
-	$wgAutoloadClasses['SF5'.$value] = $dir . 'includes/SF5'.$value.'.php';
+	$wgAutoloadClasses['SF5'.$value] = $dir . 'includes/SF5_'.$value.'.php';
 }
 
 function wfSF5Setup() {
