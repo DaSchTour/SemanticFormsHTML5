@@ -5,9 +5,9 @@
 class SF5file extends SFFormInput {
 
 	public static function getName() {
-		return 'html5file';
+		return 'html5-file';
     }
-	public function getHtmlText() {
+	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
 		$html = '<span style="color:red">Not implemented yet!</span>';
 		return $html;
     }
