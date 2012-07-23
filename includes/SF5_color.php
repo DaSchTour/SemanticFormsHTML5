@@ -25,7 +25,7 @@ class SF5color extends SFFormInput {
                                  'value' => $currentValue,
                                  'type'  => 'color'
                   );
-		$thml = <<<END
+		$html = <<<END
 	<input name="{$input_name}[is_checkbox]" type="hidden" value="true" />
 	<input id="$input_id" name="{$input_name}[value]" type="color" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
 END;
