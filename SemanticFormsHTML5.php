@@ -12,10 +12,17 @@ $wgExtensionCredits[ 'semantic' ][] = array(
 
 $dir = dirname( __FILE__ ) . '/';
 
+/*
+$HTML5inputs = array('button','checkbox','color','date','datetime','datetime-local','email','file','hidden','image','month','number','password','radio','range','reset','search','submit','tel','text','time','url','week' );
+
+ * at first reduce to the working
+ * */
+
+$HTML5inputs = array('color');
+
+
 $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18n.php';
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
-
-$HTML5inputs = array('button','checkbox','color','date','datetime','datetime-local','email','file','hidden','image','month','number','password','radio','range','reset','search','submit','tel','text','time','url','week' );
 
 foreach ($HTML5inputs as $key => $value) {
 	$wgAutoloadClasses['SF5{$value}'] = $dir . 'includes/SF5_{$value}.php';
