@@ -23,6 +23,7 @@ $HTML5inputs = array('color','email','number');
 $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18n.php';
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
 
+/*
 foreach ($HTML5inputs as $key => $value) {
 	$wgAutoloadClasses['SF5'.$value] = $dir . 'includes/SF5_'.$value.'.php';
 }
@@ -34,3 +35,49 @@ function wfSF5Setup() {
 		}
 		return true;
 }
+ * */
+ 
+global $sfgFormPrinter;
+foreach ($HTML5inputs as $key => $value) {
+	$sfgFormPrinter->setInputTypeHook('html5'.$key, 'sfHtml5'.$key, array());
+}
+
+function sfHtml5color($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
+		global $sfgTabIndex, $sfgFieldNum, $sfgShowOnSelect;
+
+		if ( array_key_exists( 'class', $other_args ) ) {
+			$className .= ' ' . $other_args['class'];
+		}
+		$input_id = "input_$sfgFieldNum";
+		$disabled_text = ( $is_disabled ) ? 'disabled' : '';
+		$html = <<<END
+	<input id="$input_id" name="{$input_name}[value]" type="color" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
+END;
+		return $html;
+	}
+function sfHtml5number($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
+		global $sfgTabIndex, $sfgFieldNum, $sfgShowOnSelect;
+
+		if ( array_key_exists( 'class', $other_args ) ) {
+			$className .= ' ' . $other_args['class'];
+		}
+		$input_id = "input_$sfgFieldNum";
+		$disabled_text = ( $is_disabled ) ? 'disabled' : '';
+		$html = <<<END
+	<input id="$input_id" name="{$input_name}[value]" type="number" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
+END;
+		return $html;
+	}
+function sfHtml5email($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
+		global $sfgTabIndex, $sfgFieldNum, $sfgShowOnSelect;
+
+		if ( array_key_exists( 'class', $other_args ) ) {
+			$className .= ' ' . $other_args['class'];
+		}
+		$input_id = "input_$sfgFieldNum";
+		$disabled_text = ( $is_disabled ) ? 'disabled' : '';
+		$html = <<<END
+	<input id="$input_id" name="{$input_name}[value]" type="email" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
+END;
+		return $html;
+	}
