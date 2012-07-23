@@ -18,7 +18,7 @@ $HTML5inputs = array('button','checkbox','color','date','datetime','datetime-loc
  * at first reduce to the working
  * */
 
-$HTML5inputs = array('color','email','num');
+$HTML5inputs = array('color','email','number');
 
 $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18n.php';
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
