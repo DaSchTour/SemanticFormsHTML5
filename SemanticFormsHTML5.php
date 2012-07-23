@@ -18,6 +18,8 @@ $HTML5inputs = array('button','checkbox','color','date','datetime','datetime_loc
 $wgExtensionMessagesFiles['SemanticFormsHTML5'] = $dir . 'SemanticFormsHTML5.i18n.php';
 $wgHooks['ParserFirstCallInit'][] = 'wfSF5Setup';
 
+$wgAutoloadClasses['SF5Utils'] = $dir . 'includes/SF5_Utils.php';
+
 foreach ($HTML5inputs as $key => $value) {
 	$wgAutoloadClasses['SF5'.$value] = $dir . 'includes/SF5_'.$value.'.php';
 }

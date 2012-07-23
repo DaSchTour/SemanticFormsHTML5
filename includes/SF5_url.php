@@ -5,7 +5,7 @@
 class SF5url extends SFFormInput {
 
 	public static function getName() {
-		return 'html5url';
+		return 'html5-url';
     }
 	
 	public static function getParameters() {
@@ -14,18 +14,7 @@ class SF5url extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
-		$inputFieldDisabled =
-                         array_key_exists( 'disable input field', $this->mOtherArgs )
-                         || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
-                         || $this->mIsDisabled   ;
-		
-		$attribs = array(
-                                 'name'  => $inputName,
-                                 'class' => $class,
-                                 'value' => $currentValue,
-                                 'type'  => 'url'
-                  );
-		$html = Xml::element( 'input', $attribs );		
+		$html = SF5Utils::textHTML( $this->mCurrentValue, $this->mInputName, $inputFieldDisabled, $this->mOtherArgs, 'input_' . $this->mInputNumber, 'url' );	
 		return $html;
 	}
 	
