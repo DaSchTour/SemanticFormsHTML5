@@ -5,7 +5,7 @@
 class SF5color extends SFFormInput {
 
 	public static function getName() {
-		return 'html5-color';
+		return 'html5color';
     }
 	
 	public static function getParameters() {
@@ -14,17 +14,6 @@ class SF5color extends SFFormInput {
 	}
 	
 	public function getHtmlText() {
-		$inputFieldDisabled =
-                         array_key_exists( 'disable input field', $this->mOtherArgs )
-                         || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
-                         || $this->mIsDisabled   ;
-		
-		$attribs = array(
-                                 'name'  => $inputName,
-                                 'class' => $class,
-                                 'value' => $currentValue,
-                                 'type'  => 'color'
-                  );
 		$html = <<<END
 	<input name="{$input_name}[is_checkbox]" type="hidden" value="true" />
 	<input id="$input_id" name="{$input_name}[value]" type="color" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
