@@ -5,7 +5,7 @@
 class SF5date extends SFFormInput {
 
 	public static function getName() {
-		return 'html5-date';
+		return 'html5date';
     }
 	public function getHtmlText() {
 		$html = '<span style="color:red">Not implemented yet!</span>';

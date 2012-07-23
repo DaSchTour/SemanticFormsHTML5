@@ -5,7 +5,7 @@
 class SF5button extends SFFormInput {
 
 	public static function getName() {
-		return 'html5-button';
+		return 'html5button';
     }
 	public function getHtmlText() {
 		$html = '<span style="color:red">Not implemented yet!</span>';
