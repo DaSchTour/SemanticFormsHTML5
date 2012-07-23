@@ -7,8 +7,19 @@ class SF5range extends SFFormInput {
 	public static function getName() {
 		return 'html5-range';
     }
-	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
-		$html = '<span style="color:red">Not implemented yet!</span>';
+	public function getHtmlText() {
+		$inputFieldDisabled =
+                         array_key_exists( 'disable input field', $this->mOtherArgs )
+                         || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
+                         || $this->mIsDisabled   ;
+		
+		$attribs = array(
+                                 'name'  => $inputName,
+                                 'class' => $class,
+                                 'value' => $currentValue,
+                                 'type'  => 'range'
+                  );
+		$html = Xml::element( 'input', $attribs );		
 		return $html;
     }
 	

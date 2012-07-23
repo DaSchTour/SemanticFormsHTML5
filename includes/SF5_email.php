@@ -13,7 +13,7 @@ class SF5email extends SFFormInput {
 		return $params;
 	}
 	
-	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
+	public function getHtmlText() {
 		$inputFieldDisabled =
                          array_key_exists( 'disable input field', $this->mOtherArgs )
                          || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )

@@ -13,17 +13,19 @@ class SF5color extends SFFormInput {
 		return $params;
 	}
 	
-	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
-		global $sfgTabIndex, $sfgFieldNum, $sfgShowOnSelect;
-
-		if ( array_key_exists( 'class', $other_args ) ) {
-			$className .= ' ' . $other_args['class'];
-		}
-		$input_id = "input_$sfgFieldNum";
-		$disabled_text = ( $is_disabled ) ? 'disabled' : '';
-		$html = <<<END
-	<input id="$input_id" name="{$input_name}[value]" type="color" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
-END;
+	public function getHtmlText() {
+		$inputFieldDisabled =
+                         array_key_exists( 'disable input field', $this->mOtherArgs )
+                         || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
+                         || $this->mIsDisabled   ;
+		
+		$attribs = array(
+                                 'name'  => $inputName,
+                                 'class' => $class,
+                                 'value' => $currentValue,
+                                 'type'  => 'color'
+                  );
+		$html = Xml::element( 'input', $attribs );		
 		return $html;
 	}
 	

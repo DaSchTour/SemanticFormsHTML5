@@ -13,10 +13,19 @@ class SF5number extends SFFormInput {
 		return $params;
 	}
 	
-	public function getHtmlText($cur_value, $input_name, $is_mandatory, $is_disabled, $other_args) {
-		$html = <<<END
-	<input id="$input_id" name="{$input_name}[value]" type="number" class="$className" tabindex="$sfgTabIndex" $checked_str $disabled_text/>
-END;
+	public function getHtmlText() {
+		$inputFieldDisabled =
+                         array_key_exists( 'disable input field', $this->mOtherArgs )
+                         || ( !array_key_exists( 'enable input field', $this->mOtherArgs ) )
+                         || $this->mIsDisabled   ;
+		
+		$attribs = array(
+                                 'name'  => $inputName,
+                                 'class' => $class,
+                                 'value' => $currentValue,
+                                 'type'  => 'number'
+                  );
+		$html = Xml::element( 'input', $attribs );		
 		return $html;
 	}
 	
